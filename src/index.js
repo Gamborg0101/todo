@@ -44,3 +44,17 @@ const task1 = new Task({
 });
 
 console.log(task1.getCheckList());
+
+/*
+Look at material from TOP, and make a to-do list of functionality.
+
+
+
+Delete items
+
+Add new tasks 
+
+
+
+
+*/
