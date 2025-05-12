@@ -1,4 +1,15 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: var(--background-color);
+  color: var(--textColor)
+}
+
+:root {
+  --background-color: #114b5f;
+  --light-background-color: #f3e9d2;
+  --accent1: #1a936f;
+  --accent2: #88d498;
+  --accent3: #c6dabf;
+  --textColor: #ededed; 
 }

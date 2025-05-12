@@ -13,3 +13,7 @@ When starting with OOP in your to-do list project, here are the most important t
 5 Constructor for Initialization: Use the constructor in your Task class to initialize the properties when a new task is created.
 
 6 Focus on Small Steps: Break down the tasks. Start with a basic class structure, and then slowly add functionality like task completion or deletion. Don't try to implement everything at once.
+
+
+To do: 
+* 
