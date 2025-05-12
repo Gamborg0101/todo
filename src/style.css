@@ -2,7 +2,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
-  color: var(--textColor)
+  color: var(--textColor);
+  font-size: 16px;
+  font-family: "Times New Roman", Times, serif;
 }
 
 :root {
@@ -11,5 +13,20 @@ body {
   --accent1: #1a936f;
   --accent2: #88d498;
   --accent3: #c6dabf;
-  --textColor: #ededed; 
+  --textColor: #ededed;
+}
+
+#section-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+}
+
+#left-section {
+  display: grid;
+  grid-column: 1/2;
+  grid-template-rows: repeat(2, 60px) 1fr 1fr;
+}
+
+#right-section {
+  grid-column: 2/3;
 }
