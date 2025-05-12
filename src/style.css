@@ -5,6 +5,9 @@ body {
   color: var(--textColor);
   font-size: 16px;
   font-family: "Times New Roman", Times, serif;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  display: grid;
 }
 
 :root {
@@ -13,20 +16,42 @@ body {
   --accent1: #1a936f;
   --accent2: #88d498;
   --accent3: #c6dabf;
-  --textColor: #ededed;
+  --textColor: #000000;
 }
 
 #section-container {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 200px 1fr;
+  height: 100%;
 }
 
 #left-section {
+  background-color: var(--light-background-color);
   display: grid;
   grid-column: 1/2;
-  grid-template-rows: repeat(2, 60px) 1fr 1fr;
+  grid-template-rows: repeat(2, minmax(30px, 50px)) repeat(
+      2,
+      minmax(75px, 130px)
+    );
+  grid-template-columns: 35px 1fr 35px;
+  padding: 10px;
+  grid-template-areas:
+    "symbol1 app-name number1"
+    "symbol2 username number2 "
+    "symbol3 tasks-list-1 number3"
+    "symbol4 tasks-list-2 number4";
+}
+#app-name {
+  grid-area: app-name;
+}
+#username {
+  grid-area: username;
 }
 
-#right-section {
-  grid-column: 2/3;
+#tasks-list-1 {
+  grid-area: tasks-list-1;
+}
+
+#tasks-list-2 {
+  grid-area: tasks-list-2;
 }
