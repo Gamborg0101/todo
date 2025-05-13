@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
-  color: var(--textColor);
+  color: var(--text-color);
   font-size: 16px;
   font-family: "Times New Roman", Times, serif;
   min-block-size: 100vh;
@@ -24,7 +24,8 @@ svg {
   --accent1: #1a936f;
   --accent2: #88d498;
   --accent3: #c6dabf;
-  --textColor: #000000;
+  --text-color: #000000;
+  --text-color-accent: #5c585890;
 }
 
 #section-container {
@@ -39,28 +40,31 @@ svg {
   padding: 10px;
 }
 #app-name {
+  font-size: 1.8rem;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 #username {
+  grid-area: username;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  font-weight: bold;
 }
 
 #tasks-list-1 {
   display: grid;
-  justify-content: space-around;
+  
   align-items: center;
-  grid-template-rows: repeat(3, minmax(30px, 50px));
+  grid-template-rows: repeat(4, minmax(30px, 50px));
   grid-template-columns: minmax(30px, 50px) minmax(100px, 150px) minmax(
       30px,
       50px
     );
   grid-template-areas:
+    "person username search"
     "sun myday number"
     "star important number"
     "cal planned number";
@@ -70,6 +74,12 @@ svg {
 }
 #important {
   grid-area: important;
+}
+
+#person {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #my-day-number {
@@ -119,6 +129,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-color-accent);
 }
 
 #sun-icon {
@@ -144,6 +155,16 @@ svg {
 #planned,
 #work,
 #home,
-#groceries {
+#groceries,
+#search,
+#person {
   height: 60%;
+}
+
+#search {
+  grid-area: search;
+}
+
+#person {
+  grid-area: person;
 }
