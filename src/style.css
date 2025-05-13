@@ -10,6 +10,13 @@ body {
   display: grid;
 }
 
+svg {
+  width: auto;
+  height: 20px;
+  display: block;
+  margin: auto;
+}
+
 :root {
   --background-color: #114b5f;
   --light-background-color: #f3e9d2;
@@ -27,31 +34,89 @@ body {
 
 #left-section {
   background-color: var(--light-background-color);
-  display: grid;
   grid-column: 1/2;
-  grid-template-rows: repeat(2, minmax(30px, 50px)) repeat(
-      2,
-      minmax(75px, 130px)
-    );
-  grid-template-columns: 35px 1fr 35px;
   padding: 10px;
-  grid-template-areas:
-    "symbol1 app-name number1"
-    "symbol2 username number2 "
-    "symbol3 tasks-list-1 number3"
-    "symbol4 tasks-list-2 number4";
 }
 #app-name {
-  grid-area: app-name;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 #username {
-  grid-area: username;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 #tasks-list-1 {
-  grid-area: tasks-list-1;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-rows: repeat(3, minmax(30px, 50px));
+  grid-template-columns: minmax(30px, 50px) minmax(100px, 150px) minmax(
+      30px,
+      50px
+    );
+  grid-template-areas:
+    "sun myday number"
+    "star important number"
+    "cal planned number";
+}
+#my-day {
+  grid-area: myday;
+}
+#important {
+  grid-area: important;
+}
+
+#my-day-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#planned {
+  grid-area: planned;
 }
 
 #tasks-list-2 {
-  grid-area: tasks-list-2;
+  border-top: 1px solid black;
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-rows: repeat(3, minmax(30px, 50px));
+  grid-template-columns: minmax(30px, 50px) minmax(100px, 150px) minmax(
+      30px,
+      50px
+    );
+  grid-template-areas:
+    "human work number"
+    "house home number"
+    "food groceries number";
+}
+
+.tasknumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#sun-icon {
+  grid-area: sun;
+  display: block;
+  margin: auto;
+}
+
+#work {
+  grid-area: work;
+}
+
+#home {
+  grid-area: home;
+}
+
+#groceries {
+  grid-area: groceries;
 }
