@@ -52,11 +52,12 @@ svg {
   display: flex;
   align-items: center;
   font-weight: bold;
+  padding: 1px 6px;
 }
 
 #tasks-list-1 {
   display: grid;
-  
+
   align-items: center;
   grid-template-rows: repeat(4, minmax(30px, 50px));
   grid-template-columns: minmax(30px, 50px) minmax(100px, 150px) minmax(
@@ -76,7 +77,7 @@ svg {
   grid-area: important;
 }
 
-#person {
+#person-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +126,8 @@ svg {
   border: 2px solid var(--light-background-color-accent);
 }
 
-.tasknumber {
+.tasknumber,
+#search {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,6 +152,14 @@ svg {
   grid-area: groceries;
 }
 
+#search {
+  grid-area: search;
+}
+
+#person {
+  grid-area: person;
+}
+
 #my-day,
 #important,
 #planned,
@@ -157,14 +167,7 @@ svg {
 #home,
 #groceries,
 #search,
-#person {
+#person-icon,
+#username {
   height: 60%;
-}
-
-#search {
-  grid-area: search;
-}
-
-#person {
-  grid-area: person;
 }
