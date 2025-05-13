@@ -20,6 +20,7 @@ svg {
 :root {
   --background-color: #114b5f;
   --light-background-color: #f3e9d2;
+  --light-background-color-accent: #e5dbc2;
   --accent1: #1a936f;
   --accent2: #88d498;
   --accent3: #c6dabf;
@@ -97,6 +98,23 @@ svg {
     "food groceries number";
 }
 
+#tasks-list-1 > * button,
+#tasks-list-2 > * button {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-background-color);
+  border: 2px solid var(--light-background-color);
+}
+
+#tasks-list-1 > * button:hover,
+#tasks-list-2 > * button:hover {
+  background-color: var(--light-background-color-accent);
+  border: 2px solid var(--light-background-color-accent);
+}
+
 .tasknumber {
   display: flex;
   align-items: center;
@@ -119,4 +137,13 @@ svg {
 
 #groceries {
   grid-area: groceries;
+}
+
+#my-day,
+#important,
+#planned,
+#work,
+#home,
+#groceries {
+  height: 60%;
 }
