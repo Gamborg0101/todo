@@ -1,42 +1,41 @@
-export class Project {
-  constructor({ title, description, dueDate, priority, notes, checklist }) {
-    this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.priority = priority;
-    this.notes = notes;
-    this.checklist = checklist;
+export class CreateProject {
+  constructor(title, description) {
+    this.title = "";
+    this.description = "";
   }
 
-  getTitle() {
-    return this.title;
-  }
-  getDescription() {
-    return this.description;
+  getInfoFromForm() {
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("project-form");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        this.title = document.getElementById("title-input").value;
+        this.description = document.getElementById("description-input").value;
+
+        this.setTitleAndDescription();
+      });
+    });
   }
 
-  getDueDate() {
-    return this.dueDate;
+  renderTitleDescription() {
+    const container = document.getElementById("task-container");
+
+    const createNewContainer = document.createElement("div");
+    const createTitle = document.createElement("p");
+    const createDescription = document.createElement("p");
+
+    createTitle.innerText = `Title: ${this.title}`;
+    createDescription.innerText = `Description: ${this.description}`;
+
+    createNewContainer.appendChild(createTitle);
+    createNewContainer.appendChild(createDescription);
+
+    container.appendChild(createNewContainer);
   }
 
-  getPriority() {
-    return this.priority;
-  }
-
-  getNotes() {
-    return this.notes;
-  }
-
-  getCheckList() {
-    return this.checklist;
-  }
-
-  addItemToCheckList(item) {
-    return this.checklist.push(item);
-  }
-
-  removeCheckList(item) {
-    return (this.checklist = this.checklist.filter((index) => index !== item));
+  setTitleAndDescription() {
+    this.renderTitleDescription();
   }
 }
-

@@ -114,13 +114,13 @@
           <div id="modal-border">
             <div id="modal-input-container">
               <p id="modal-info">MODAL INFO</p>
-              <form action="">
+              <form action="" id="project-form">
                 <div id="project-inputs">
                   <label for="title">Title</label>
-                  <input type="text" name="title" />
+                  <input type="text" id="title-input" name="title" />
 
                   <label for="description">Short description</label>
-                  <input type="text" name="description" />
+                  <input type="text" id="description-input" name="description" />
 
                   <button type="submit" id="add-project">Add project</button>
                 </div>
@@ -130,13 +130,11 @@
         </div>
         <div id="dynamic-container">
           <h2 id="test-header">Work-todo</h2>
-          <ul id="list-items">
-            <li>Task 1</li>
-            <li>Task 2</li>
-            <li>Task 3</li>
-            <li>Task 4</li>
-            <li>Task 5</li>
-          </ul>
+          <div id="task-container">
+            <div>
+              <p>task one</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

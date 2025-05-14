@@ -1,8 +1,9 @@
 import "./style.css";
-import { Project } from "./createProject";
+import { Task } from "./createTask";
 import { changeDOM } from "./changeDOM";
+import { CreateProject as Project } from "./createProject";
 
-const task1 = new Project({
+const task1 = new Task({
   title: "Grocery",
   description: "Buy milk and eggs",
   dueDate: "2025-05-11",
@@ -13,4 +14,8 @@ const task1 = new Project({
 
 task1.removeCheckList("Eggs");
 
-console.log(changeDOM());
+changeDOM();
+
+const project = new Project();
+project.getInfoFromForm();
+
