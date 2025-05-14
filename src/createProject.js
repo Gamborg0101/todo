@@ -23,7 +23,6 @@ export class CreateProject {
     const projectModal = document.getElementById("modal-container");
     document.getElementById("title-input").value = "";
     document.getElementById("description-input").value = "";
-
     projectModal.style.display = "none";
   }
 
@@ -32,14 +31,40 @@ export class CreateProject {
     const createNewContainer = document.createElement("div");
     const createTitle = document.createElement("p");
     const createDescription = document.createElement("p");
+    const buttonDiv = document.createElement("div");
+    const editButton = document.createElement("button");
+    const deleteButton = document.createElement("button");
+    const titleDiv = document.createElement("div");
+    const descriptionDiv = document.createElement("div");
 
-    createTitle.innerText = `Title: ${this.title}`;
-    createDescription.innerText = `Description: ${this.description}`;
+    buttonDiv.class = "buttonDiv";
+
+    editButton.innerText = "Edit";
+    editButton.className = "editButton";
+    deleteButton.innerText = "Delete";
+    deleteButton.className = "deleteButton";
+
+    createTitle.innerText = `${this.title}`;
+    createTitle.className = "titleElement";
+
+    createDescription.innerText = `${this.description}`;
+    createDescription.className = "titleElement";
+    if (!createDescription.innerText) {
+      createDescription.innerText = "No description";
+    }
+
+    createNewContainer.className = "newContainers";
+
+    buttonDiv.className = "buttonDiv";
+
+    buttonDiv.appendChild(editButton);
+    buttonDiv.appendChild(deleteButton);
 
     createNewContainer.appendChild(createTitle);
     createNewContainer.appendChild(createDescription);
-
+    createNewContainer.appendChild(buttonDiv);
     container.appendChild(createNewContainer);
+
     this.resetAfterRender();
   }
 

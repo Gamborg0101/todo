@@ -120,7 +120,11 @@
                   <input type="text" id="title-input" name="title" />
 
                   <label for="description">Short description</label>
-                  <input type="text" id="description-input" name="description" />
+                  <input
+                    type="text"
+                    id="description-input"
+                    name="description"
+                  />
 
                   <button type="submit" id="add-project">Add project</button>
                 </div>
@@ -131,8 +135,13 @@
         <div id="dynamic-container">
           <h2 id="test-header">Work-todo</h2>
           <div id="task-container">
-            <div>
-              <p>task one</p>
+            <div class="newContainers">
+              <p>Name</p>
+              <p>Description</p>
+              <div class="buttonDiv">
+                <button class="editButton">Edit</button>
+                <button class="deleteButton">Delete</button>
+              </div>
             </div>
           </div>
         </div>
