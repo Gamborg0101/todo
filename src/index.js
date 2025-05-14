@@ -18,4 +18,4 @@ changeDOM();
 
 const project = new Project();
 project.getInfoFromForm();
-
+// project.deleteElement();

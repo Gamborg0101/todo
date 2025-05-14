@@ -19,14 +19,14 @@ export class CreateProject {
     });
   }
 
-  resetAfterRender() {
+  resetInputFields() {
     const projectModal = document.getElementById("modal-container");
     document.getElementById("title-input").value = "";
     document.getElementById("description-input").value = "";
     projectModal.style.display = "none";
   }
 
-  renderTitleDescription() {
+  renderProjectElement() {
     const container = document.getElementById("task-container");
     const createNewContainer = document.createElement("div");
     const createTitle = document.createElement("p");
@@ -34,8 +34,6 @@ export class CreateProject {
     const buttonDiv = document.createElement("div");
     const editButton = document.createElement("button");
     const deleteButton = document.createElement("button");
-    const titleDiv = document.createElement("div");
-    const descriptionDiv = document.createElement("div");
 
     buttonDiv.class = "buttonDiv";
 
@@ -65,10 +63,19 @@ export class CreateProject {
     createNewContainer.appendChild(buttonDiv);
     container.appendChild(createNewContainer);
 
-    this.resetAfterRender();
+    this.resetInputFields();
+    
   }
 
   setTitleAndDescription() {
-    this.renderTitleDescription();
+    this.renderProjectElement();
+  }
+
+  deleteElement() {
+    const deleteButton = document.querySelector(".deleteButton");
+
+    deleteButton.addEventListener("click", (e) => {
+      console.log(this.container);
+    });
   }
 }
