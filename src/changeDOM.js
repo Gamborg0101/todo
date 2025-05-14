@@ -12,12 +12,4 @@ export function changeDOM() {
       projectModal.style.display = "block";
     }
   });
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("project-form");
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-    });
-  });
 }

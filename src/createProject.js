@@ -1,7 +1,7 @@
 export class CreateProject {
   constructor(title, description) {
-    this.title = "";
-    this.description = "";
+    this.title = title;
+    this.description = description;
   }
 
   getInfoFromForm() {
@@ -19,9 +19,16 @@ export class CreateProject {
     });
   }
 
+  resetAfterRender() {
+    const projectModal = document.getElementById("modal-container");
+    document.getElementById("title-input").value = "";
+    document.getElementById("description-input").value = "";
+
+    projectModal.style.display = "none";
+  }
+
   renderTitleDescription() {
     const container = document.getElementById("task-container");
-
     const createNewContainer = document.createElement("div");
     const createTitle = document.createElement("p");
     const createDescription = document.createElement("p");
@@ -33,6 +40,7 @@ export class CreateProject {
     createNewContainer.appendChild(createDescription);
 
     container.appendChild(createNewContainer);
+    this.resetAfterRender();
   }
 
   setTitleAndDescription() {
