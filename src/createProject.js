@@ -64,7 +64,6 @@ export class CreateProject {
     container.appendChild(createNewContainer);
 
     this.resetInputFields();
-    
   }
 
   setTitleAndDescription() {
