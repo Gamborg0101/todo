@@ -1,5 +1,6 @@
 import "./style.css";
 import { Project } from "./createProject";
+import { changeDOM } from "./changeDOM";
 
 const task1 = new Project({
   title: "Grocery",
@@ -11,4 +12,5 @@ const task1 = new Project({
 });
 
 task1.removeCheckList("Eggs");
-console.log(task1.getDescription());
+
+console.log(changeDOM());

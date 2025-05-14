@@ -28,6 +28,8 @@ svg {
   --text-color-accent: #5c585890;
 }
 
+/*Left section*/
+
 #section-container {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -57,7 +59,6 @@ svg {
 
 #tasks-list-1 {
   display: grid;
-
   align-items: center;
   grid-template-rows: repeat(4, minmax(30px, 50px));
   grid-template-columns: minmax(30px, 50px) minmax(100px, 150px) minmax(
@@ -69,12 +70,6 @@ svg {
     "sun myday number"
     "star important number"
     "cal planned number";
-}
-#my-day {
-  grid-area: myday;
-}
-#important {
-  grid-area: important;
 }
 
 #person-icon {
@@ -89,8 +84,47 @@ svg {
   justify-content: center;
 }
 
+#my-day {
+  grid-area: myday;
+}
+#important {
+  grid-area: important;
+}
+
 #planned {
   grid-area: planned;
+}
+
+#work {
+  grid-area: work;
+}
+
+#home {
+  grid-area: home;
+}
+
+#groceries {
+  grid-area: groceries;
+}
+
+#search {
+  grid-area: search;
+}
+
+#person {
+  grid-area: person;
+}
+
+#my-day,
+#important,
+#planned,
+#work,
+#home,
+#groceries,
+#search,
+#person-icon,
+#username {
+  height: 60%;
 }
 
 #tasks-list-2 {
@@ -140,34 +174,32 @@ svg {
   margin: auto;
 }
 
-#work {
-  grid-area: work;
+/*Right section*/
+
+/*Modal*/
+
+#modal-container {
+  display: none; /*Change here if needed*/
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-#home {
-  grid-area: home;
+#modal-border {
+  width: 400px;
+  height: 200px;
+  background-color: #88d498;
 }
 
-#groceries {
-  grid-area: groceries;
+#modal-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-#search {
-  grid-area: search;
-}
-
-#person {
-  grid-area: person;
-}
-
-#my-day,
-#important,
-#planned,
-#work,
-#home,
-#groceries,
-#search,
-#person-icon,
-#username {
-  height: 60%;
+#project-inputs {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
 }

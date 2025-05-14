@@ -104,21 +104,30 @@
           <div class="tasknumber">
             <p>2</p>
           </div>
-          <div id="food">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                d="M17,18C15.89,18 15,18.89 15,20A2,2 0 0,0 17,22A2,2 0 0,0 19,20C19,18.89 18.1,18 17,18M1,2V4H3L6.6,11.59L5.24,14.04C5.09,14.32 5,14.65 5,15A2,2 0 0,0 7,17H19V15H7.42A0.25,0.25 0 0,1 7.17,14.75C7.17,14.7 7.18,14.66 7.2,14.63L8.1,13H15.55C16.3,13 16.96,12.58 17.3,11.97L20.88,5.5C20.95,5.34 21,5.17 21,5A1,1 0 0,0 20,4H5.21L4.27,2M7,18C5.89,18 5,18.89 5,20A2,2 0 0,0 7,22A2,2 0 0,0 9,20C9,18.89 8.1,18 7,18Z"
-              />
-            </svg>
-          </div>
-
-          <div id="groceries">
-            <button>Groceries</button>
-          </div>
-          <div class="tasknumber">3</div>
         </div>
       </div>
       <div id="right-section">
+        <div id="button-container">
+          <button id="create-task-button">Create new project</button>
+        </div>
+        <div id="modal-container">
+          <div id="modal-border">
+            <div id="modal-input-container">
+              <p id="modal-info">MODAL INFO</p>
+              <form action="">
+                <div id="project-inputs">
+                  <label for="title">Title</label>
+                  <input type="text" name="title" />
+
+                  <label for="description">Short description</label>
+                  <input type="text" name="description" />
+
+                  <button type="submit" id="add-project">Add project</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
         <div id="dynamic-container">
           <h2 id="test-header">Work-todo</h2>
           <ul id="list-items">
@@ -133,3 +142,40 @@
     </div>
   </body>
 </html>
+
+<!--
+
+ <form action="">
+                <div id="title-input">
+                  <label for="title">Title</label>
+                  <input type="text" name="title" />
+                </div>
+
+                <div id="description-input">
+                  <label for="description">Description</label>
+                  <input type="text" name="description" />
+                </div>
+
+                <div id="duedate-input">
+                  <label for="duedate">Due date</label>
+                  <input type="text" name="duedate" />
+                </div>
+
+                <div id="priority">
+                  <label for="priority">Priority</label>
+                  <input type="text" name="priority" />
+                </div>
+
+                <div id="notes">
+                  <label for="notes">Notes</label>
+                  <input type="text" name="notes" />
+                </div>
+
+                <div id="checklist-input">
+                  <label for="checklist">Checklist</label>
+                  <input type="text" name="checklist" />
+                </div>
+              </form>
+
+
+-->
