@@ -1,13 +1,11 @@
 export class CreateProject {
-  constructor(title, description) {
+  constructor(title) {
     this.title = title;
-    this.description = description;
   }
 
   resetInputFields() {
     const projectModal = document.getElementById("modal-container");
     document.getElementById("title-input").value = "";
-    document.getElementById("description-input").value = "";
     projectModal.style.display = "none";
   }
 
@@ -15,10 +13,11 @@ export class CreateProject {
     const container = document.getElementById("task-container");
     const createNewContainer = document.createElement("div");
     const createTitle = document.createElement("p");
-    const createDescription = document.createElement("p");
     const buttonDiv = document.createElement("div");
     const editButton = document.createElement("button");
     const deleteButton = document.createElement("button");
+
+    const taskList = document.getElementById("task-list");
 
     buttonDiv.class = "buttonDiv";
 
@@ -29,12 +28,6 @@ export class CreateProject {
 
     createTitle.innerText = `${this.title}`;
     createTitle.className = "titleElement";
-
-    createDescription.innerText = `${this.description}`;
-    createDescription.className = "titleElement";
-    if (!createDescription.innerText) {
-      createDescription.innerText = "No description";
-    }
 
     createNewContainer.className = "newContainers";
 
@@ -49,9 +42,8 @@ export class CreateProject {
     buttonDiv.appendChild(deleteButton);
 
     createNewContainer.appendChild(createTitle);
-    createNewContainer.appendChild(createDescription);
     createNewContainer.appendChild(buttonDiv);
-    container.appendChild(createNewContainer);
+    taskList.appendChild(createNewContainer);
 
     this.resetInputFields();
   }

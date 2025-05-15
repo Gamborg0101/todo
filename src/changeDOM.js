@@ -22,10 +22,8 @@ export function handleProjectFormSubmit() {
       e.preventDefault();
 
       const title = document.getElementById("title-input").value;
-      const description = document.getElementById("description-input").value;
-      console.log(title);
 
-      const project = new Project(title, description);
+      const project = new Project(title);
       project.renderProjectElement();
     });
   });

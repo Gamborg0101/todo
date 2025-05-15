@@ -49,6 +49,22 @@ svg {
   justify-content: space-around;
   align-items: center;
 }
+
+#task-list {
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(3, minmax(30px, 50px));
+  grid-template-columns: minmax(100px, 150px) minmax(30px, 50px);
+  grid-template-areas:
+    "person username username "
+    "task1 space delete"
+    "create create create";
+}
+
+#person-icon {
+  grid-area: person;
+}
+
 #username {
   grid-area: username;
   display: flex;
@@ -57,94 +73,15 @@ svg {
   padding: 1px 6px;
 }
 
-#tasks-list-1 {
-  display: grid;
-  align-items: center;
-  grid-template-rows: repeat(4, minmax(30px, 50px));
-  grid-template-columns: minmax(30px, 50px) minmax(100px, 150px) minmax(
-      30px,
-      50px
-    );
-  grid-template-areas:
-    "person username search"
-    "sun myday number"
-    "star important number"
-    "cal planned number";
+#project1-text {
+  grid-area: task1;
 }
 
-#person-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#project1-delete {
+  grid-area: delete;
 }
 
-#my-day-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#my-day {
-  grid-area: myday;
-}
-#important {
-  grid-area: important;
-}
-
-#planned {
-  grid-area: planned;
-}
-
-#work {
-  grid-area: work;
-}
-
-#home {
-  grid-area: home;
-}
-
-#groceries {
-  grid-area: groceries;
-}
-
-#search {
-  grid-area: search;
-}
-
-#person {
-  grid-area: person;
-}
-
-#my-day,
-#important,
-#planned,
-#work,
-#home,
-#groceries,
-#search,
-#person-icon,
-#username {
-  height: 60%;
-}
-
-#tasks-list-2 {
-  border-top: 1px solid black;
-  display: grid;
-  justify-content: space-around;
-  align-items: center;
-  grid-template-rows: repeat(3, minmax(30px, 50px));
-  grid-template-columns: minmax(30px, 50px) minmax(100px, 150px) minmax(
-      30px,
-      50px
-    );
-  grid-template-areas:
-    "human work number"
-    "house home number"
-    "food groceries number";
-}
-
-#tasks-list-1 > * button,
-#tasks-list-2 > * button {
+#tasks-list > * button {
   display: flex;
   align-items: center;
   justify-content: start;
@@ -154,9 +91,19 @@ svg {
   border: 2px solid var(--light-background-color);
 }
 
-#tasks-list-1 > * button:hover,
-#tasks-list-2 > * button:hover {
+#tasks-list > * button:hover {
   background-color: var(--light-background-color-accent);
+  border: 2px solid var(--light-background-color-accent);
+}
+
+#create-task-button {
+  grid-area: create;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--background-color);
+}
+
+#create-task-button:hover {
   border: 2px solid var(--light-background-color-accent);
 }
 
@@ -228,20 +175,21 @@ svg {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 15px;
+  margin-top: 50px;
 }
 
-.buttonDiv > button {
+.buttonDiv > button,
+#add-project {
   background-color: var(--light-background-color);
   border: 2px solid var(--light-background-color);
   border-radius: 4px;
   padding: 10px;
-  width: 75px;
+  width: 780x;
   font-weight: bold;
 }
 
-
-.buttonDiv > button:hover {
+.buttonDiv > button:hover,
+#add-project:hover {
   background-color: var(--light-background-color-accent);
   border: 2px solid var(--light-background-color-accent);
 }
