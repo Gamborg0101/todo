@@ -4,21 +4,6 @@ export class CreateProject {
     this.description = description;
   }
 
-  getInfoFromForm() {
-    document.addEventListener("DOMContentLoaded", () => {
-      const form = document.getElementById("project-form");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        this.title = document.getElementById("title-input").value;
-        this.description = document.getElementById("description-input").value;
-
-        this.setTitleAndDescription();
-      });
-    });
-  }
-
   resetInputFields() {
     const projectModal = document.getElementById("modal-container");
     document.getElementById("title-input").value = "";
@@ -55,6 +40,11 @@ export class CreateProject {
 
     buttonDiv.className = "buttonDiv";
 
+    /* Functionality for delete button */
+    deleteButton.addEventListener("click", () => {
+      createNewContainer.remove();
+    });
+
     buttonDiv.appendChild(editButton);
     buttonDiv.appendChild(deleteButton);
 
@@ -68,13 +58,5 @@ export class CreateProject {
 
   setTitleAndDescription() {
     this.renderProjectElement();
-  }
-
-  deleteElement() {
-    const deleteButton = document.querySelector(".deleteButton");
-
-    deleteButton.addEventListener("click", (e) => {
-      console.log(this.container);
-    });
   }
 }
