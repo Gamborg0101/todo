@@ -13,37 +13,29 @@ export class CreateProject {
     const container = document.getElementById("task-container");
     const createNewContainer = document.createElement("div");
     const createTitle = document.createElement("p");
-    const buttonDiv = document.createElement("div");
-    const editButton = document.createElement("button");
     const deleteButton = document.createElement("button");
 
     const taskList = document.getElementById("task-list");
 
-    buttonDiv.class = "buttonDiv";
-
-    editButton.innerText = "Edit";
-    editButton.className = "editButton";
     deleteButton.innerText = "Delete";
     deleteButton.className = "deleteButton";
-
-    createTitle.innerText = `${this.title}`;
-    createTitle.className = "titleElement";
-
-    createNewContainer.className = "newContainers";
-
-    buttonDiv.className = "buttonDiv";
 
     /* Functionality for delete button */
     deleteButton.addEventListener("click", () => {
       createNewContainer.remove();
     });
 
-    buttonDiv.appendChild(editButton);
-    buttonDiv.appendChild(deleteButton);
+    createTitle.innerText = `${this.title}`;
+    createTitle.className = "titleElement";
 
-    createNewContainer.appendChild(createTitle);
-    createNewContainer.appendChild(buttonDiv);
-    taskList.appendChild(createNewContainer);
+    /*  
+    Jeg appender det forkerte sted, så jeg skal bare lave en container div, 
+    hvor min create new project ikke er en del af den, og så skal jeg appende ind i containeren.
+    
+    */
+
+    taskList.appendChild(createTitle);
+    taskList.appendChild(deleteButton);
 
     this.resetInputFields();
   }

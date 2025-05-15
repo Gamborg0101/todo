@@ -53,12 +53,12 @@ svg {
 #task-list {
   display: grid;
   align-items: center;
-  grid-template-rows: repeat(3, minmax(30px, 50px));
+  grid-template-rows: repeat(2, minmax(30px, 50px));
   grid-template-columns: minmax(100px, 150px) minmax(30px, 50px);
   grid-template-areas:
-    "person username username "
-    "task1 space delete"
-    "create create create";
+    "person username  "
+    "task1  delete"
+    "create  create";
 }
 
 #person-icon {
@@ -159,26 +159,12 @@ svg {
 }
 
 .newContainers {
-  margin-top: 25px;
-  margin-right: 25px;
   background-color: #1a936f;
-  height: 200px;
-  width: 200px;
+  height: 10px;
+  width: 230px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 2px 2px 4px gray;
 }
 
-.buttonDiv {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  margin-top: 50px;
-}
-
-.buttonDiv > button,
 #add-project {
   background-color: var(--light-background-color);
   border: 2px solid var(--light-background-color);
