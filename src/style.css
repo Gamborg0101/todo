@@ -60,10 +60,20 @@ svg {
     "task1  delete";
 }
 
+.titleElement {
+  width: 100%;
+  margin-left: 5px;
+}
+
+.titleElement:hover {
+  background-color: var(--light-background-color-accent);
+}
+
 .single-projects {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 10px;
 }
 
 #person-icon {

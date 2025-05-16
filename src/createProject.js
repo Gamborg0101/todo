@@ -10,10 +10,11 @@ export class CreateProject {
   }
 
   renderProjectElement() {
-    const createNewContainer = document.createElement("div");
-    const createTitle = document.createElement("p");
-    const deleteButton = document.createElement("button");
     const projectContainer = document.getElementById("project-container");
+
+    const createNewContainer = document.createElement("div");
+    const createTitle = document.createElement("div");
+    const deleteButton = document.createElement("button");
 
     deleteButton.innerText = "Delete";
     deleteButton.className = "deleteButton";
@@ -23,10 +24,14 @@ export class CreateProject {
       createNewContainer.remove();
     });
 
+    createTitle.addEventListener("click", () => {
+      createNewContainer.setAttribute("data-select", "selected");
+    });
+
     createTitle.innerText = `${this.title}`;
     createTitle.className = "titleElement";
 
-    createNewContainer.classList = "single-projects";
+    createNewContainer.classList = "single-project";
 
     createNewContainer.appendChild(createTitle);
     createNewContainer.appendChild(deleteButton);

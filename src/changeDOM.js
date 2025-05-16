@@ -1,10 +1,10 @@
 import { CreateProject as Project } from "./createProject";
 
 export function changeDOM() {
+  /* Toggle and hide modal */
   const taskButton = document.getElementById("create-task-button");
   const projectModal = document.getElementById("modal-container");
 
-  /* Toggle and hide modal */
   taskButton.addEventListener("click", () => {
     if (projectModal.style.display === "block") {
       projectModal.style.display = "none";
@@ -27,4 +27,13 @@ export function handleProjectFormSubmit() {
       project.renderProjectElement();
     });
   });
+
+  /* Active and deactivate selected element */
+
+  const selected = document.getElementsByClassName("titleElement");
+  console.log(selected);
+
+  for (const element of selected) {
+    console.log(element);
+  }
 }
