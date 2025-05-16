@@ -56,21 +56,18 @@ svg {
   grid-template-rows: repeat(2, minmax(30px, 50px));
   grid-template-columns: minmax(100px, 150px) minmax(30px, 50px);
   grid-template-areas:
-    "person username  "
-    "task1  delete"
-    "create  create";
+    "person username"
+    "task1  delete";
+}
+
+.single-projects {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #person-icon {
   grid-area: person;
-}
-
-#username {
-  grid-area: username;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  padding: 1px 6px;
 }
 
 #project1-text {
@@ -79,6 +76,14 @@ svg {
 
 #project1-delete {
   grid-area: delete;
+}
+
+#username {
+  grid-area: username;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  padding: 1px 6px;
 }
 
 #tasks-list > * button {
@@ -99,7 +104,7 @@ svg {
 #create-task-button {
   grid-area: create;
   width: 100%;
-  height: 100%;
+  height: 5%;
   border: 2px solid var(--background-color);
 }
 

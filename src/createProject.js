@@ -10,12 +10,10 @@ export class CreateProject {
   }
 
   renderProjectElement() {
-    const container = document.getElementById("task-container");
     const createNewContainer = document.createElement("div");
     const createTitle = document.createElement("p");
     const deleteButton = document.createElement("button");
-
-    const taskList = document.getElementById("task-list");
+    const projectContainer = document.getElementById("project-container");
 
     deleteButton.innerText = "Delete";
     deleteButton.className = "deleteButton";
@@ -28,14 +26,12 @@ export class CreateProject {
     createTitle.innerText = `${this.title}`;
     createTitle.className = "titleElement";
 
-    /*  
-    Jeg appender det forkerte sted, så jeg skal bare lave en container div, 
-    hvor min create new project ikke er en del af den, og så skal jeg appende ind i containeren.
-    
-    */
+    createNewContainer.classList = "single-projects";
 
-    taskList.appendChild(createTitle);
-    taskList.appendChild(deleteButton);
+    createNewContainer.appendChild(createTitle);
+    createNewContainer.appendChild(deleteButton);
+
+    projectContainer.appendChild(createNewContainer);
 
     this.resetInputFields();
   }
