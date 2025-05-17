@@ -28,12 +28,6 @@ export function handleProjectFormSubmit() {
     });
   });
 
-  /* Active and deactivate selected element */
-
+  /* Active and deactivate selected element - page switch */
   const selected = document.getElementsByClassName("titleElement");
-  console.log(selected);
-
-  for (const element of selected) {
-    console.log(element);
-  }
 }

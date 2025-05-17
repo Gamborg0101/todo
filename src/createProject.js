@@ -53,50 +53,16 @@ export class CreateProject {
 /*
 Design forslag fra nu: 
 
-
     projectname: 1
-    todoItem1 = [{
     description: value,
     dueDate: value, 
     priority: value,
     notes: value, 
+    todoItem1 = [
     checklist:value
-      }
-
-    todoItem2 = [{
-    description: value,
-    dueDate: value, 
-    priority: value,
-    notes: value, 
-    checklist:value
-      }
     ]
-      projectname: 2
-    todoItem1 = [{
-    description: value,
-    dueDate: value, 
-    priority: value,
-    notes: value, 
-    checklist:value
-      }
 
-    todoItem2 = [{
-    description: value,
-    dueDate: value, 
-    priority: value,
-    notes: value, 
-    checklist:value
-      }
-    ]
-    
-
-
-Så kan jeg tilgå dem via projekt navn, og derefter hænge to-do listen sammen med resten. 
-
-Det jeg mangler at gøre, er at få "Create New Project"-knappen til at lave en instans, og derefter burde det faktisk være okay nemt.  
-
-Men jeg mangler lidt et øvre lag. Så det nærmerer bliver: 
-
+  
   
 
 */
