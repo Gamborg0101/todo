@@ -138,6 +138,19 @@ svg {
 
 /*Right section*/
 
+#test-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+#todo-form {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
 /*Modal*/
 
 #modal-container {

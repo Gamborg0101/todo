@@ -1,68 +1,34 @@
-export class CreateProject {
-  constructor(title) {
-    this.title = title;
-  }
+import { Project as Project } from "./changeDOM";
 
-  resetInputFields() {
-    const projectModal = document.getElementById("modal-container");
-    document.getElementById("title-input").value = "";
-    projectModal.style.display = "none";
-  }
+export function changeDOM() {
+  /* Toggle and hide modal */
+  const taskButton = document.getElementById("create-task-button");
+  const projectModal = document.getElementById("modal-container");
 
-  renderProjectElement() {
-    const projectContainer = document.getElementById("project-container");
-    const todoContainer =
-      document.getElementById(
-        "todo-container"
-      ); /* Skal bruges, når jeg er klar til at appende en ny task. */
-
-    const createNewContainer = document.createElement("div");
-    const createTitle = document.createElement("div");
-    const deleteButton = document.createElement("button");
-
-    deleteButton.innerText = "Delete";
-    deleteButton.className = "deleteButton";
-
-    /* Functionality for delete button */
-    deleteButton.addEventListener("click", () => {
-      createNewContainer.remove();
-    });
-
-    createTitle.addEventListener("click", () => {
-      createNewContainer.setAttribute("data-select", "selected");
-    });
-
-    createTitle.innerText = `${this.title}`;
-    createTitle.className = "titleElement";
-
-    createNewContainer.classList.add("single-project");
-
-    createNewContainer.appendChild(createTitle);
-    createNewContainer.appendChild(deleteButton);
-
-    projectContainer.appendChild(createNewContainer);
-
-    this.resetInputFields();
-  }
-
-  setTitleAndDescription() {
-    this.renderProjectElement();
-  }
+  taskButton.addEventListener("click", () => {
+    if (projectModal.style.display === "block") {
+      projectModal.style.display = "none";
+    } else {
+      projectModal.style.display = "block";
+    }
+  });
 }
 
-/*
-Design forslag fra nu: 
+/* Get information from form to setup new div moduls. */
+export function handleProjectFormSubmit() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("project-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-    projectname: 1
-    description: value,
-    dueDate: value, 
-    priority: value,
-    notes: value, 
-    todoItem1 = [
-    checklist:value
-    ]
+      const title = document.getElementById("title-input").value;
 
-  
-  
-
-*/
+      const project = new Project(title);
+      console.log("Project from init", project);
+      project.renderProjectElement();
+    });
+  });
+}
+export function handleTodoForm() {
+  /* Target new form, that gets user input. */
+}

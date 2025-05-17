@@ -1,33 +1,54 @@
-import { CreateProject as Project } from "./createProject";
+export class Project {
+  constructor(title) {
+    this.title = title;
+    this.active = false;
+    this.todos = [];
+  }
 
-export function changeDOM() {
-  /* Toggle and hide modal */
-  const taskButton = document.getElementById("create-task-button");
-  const projectModal = document.getElementById("modal-container");
+  addTodo(todo) {
+    this.todos.push(todo);
+  }
 
-  taskButton.addEventListener("click", () => {
-    if (projectModal.style.display === "block") {
-      projectModal.style.display = "none";
-    } else {
-      projectModal.style.display = "block";
-    }
-  });
-}
+  resetInputFields() {
+    const projectModal = document.getElementById("modal-container");
+    document.getElementById("title-input").value = "";
+    projectModal.style.display = "none";
+  }
 
-/* Get information from form to setup new div moduls. */
-export function handleProjectFormSubmit() {
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("project-form");
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+  renderProjectElement() {
+    const projectContainer = document.getElementById("project-container");
 
-      const title = document.getElementById("title-input").value;
+    const createNewContainer = document.createElement("div");
+    const createTitle = document.createElement("div");
+    const deleteButton = document.createElement("button");
 
-      const project = new Project(title);
-      project.renderProjectElement();
+    deleteButton.innerText = "Delete";
+    deleteButton.className = "deleteButton";
+
+    /* Functionality for delete button */
+    deleteButton.addEventListener("click", () => {
+      createNewContainer.remove();
     });
-  });
 
-  /* Active and deactivate selected element - page switch */
-  const selected = document.getElementsByClassName("titleElement");
+    createTitle.addEventListener("click", () => {
+      createNewContainer.setAttribute("data-select", "selected");
+    });
+
+    createTitle.innerText = `${this.title}`;
+    createTitle.className = "titleElement";
+
+    createNewContainer.classList.add("single-project");
+
+    createNewContainer.appendChild(createTitle);
+    createNewContainer.appendChild(deleteButton);
+
+    projectContainer.appendChild(createNewContainer);
+
+    this.resetInputFields();
+  }
+
+  setTitleAndDescription() {
+    this.renderProjectElement();
+  }
 }
+
