@@ -145,14 +145,18 @@ svg {
   font-size: 3rem;
 }
 
+#todo-modal-container {
+  display: none;
+}
+
 #todo-form-border {
   background-color: #5c585890;
+  width: 300px;
 }
 
 #todo-form {
   display: flex;
   flex-direction: column;
-  width: 150px;
 }
 
 /*Modal*/

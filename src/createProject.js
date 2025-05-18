@@ -32,3 +32,15 @@ export function handleProjectFormSubmit() {
 export function handleTodoForm() {
   /* Target new form, that gets user input. */
 }
+
+export function toDoButtonModal() {
+  const todoButton = document.getElementById("todo-button");
+  const todoModal = document.getElementById("todo-modal-container");
+  todoButton.addEventListener("click", () => {
+    if (todoModal.style.display === "block") {
+      todoModal.style.display = "none";
+    } else {
+      todoModal.style.display = "block";
+    }
+  });
+}
