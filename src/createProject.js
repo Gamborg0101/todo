@@ -36,11 +36,22 @@ export function handleTodoForm() {
 export function toDoButtonModal() {
   const todoButton = document.getElementById("todo-button");
   const todoModal = document.getElementById("todo-modal-container");
+
+  const leftSide = document.getElementById("left-section");
+  const rightSide = document.getElementById("right-section");
+
   todoButton.addEventListener("click", () => {
     if (todoModal.style.display === "block") {
       todoModal.style.display = "none";
+      leftSide.style.opacity = 1;
+      rightSide.style.opacity = 1;
+      todoModal.style.opacity = 0.4;
     } else {
+      leftSide.style.opacity = 0.4;
+      rightSide.style.opacity = 0.4;
+      todoModal.style.opacity = 1;
       todoModal.style.display = "block";
+      /* Set blurry background here */
     }
   });
 }

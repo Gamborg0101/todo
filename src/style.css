@@ -150,6 +150,7 @@ svg {
 }
 
 #todo-form-border {
+  padding: 15px;
   background-color: #5c585890;
   width: 300px;
 }
@@ -169,6 +170,11 @@ svg {
   transform: translate(-50%, -50%);
 }
 
+#todo-modal-container:active {
+  background: #000;
+  opacity: 0.4;
+}
+
 #modal-border {
   width: 400px;
   height: 200px;
@@ -180,6 +186,7 @@ svg {
   align-items: center;
   justify-content: center;
 }
+
 #project-inputs {
   display: flex;
   align-items: center;
@@ -220,3 +227,5 @@ svg {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+
