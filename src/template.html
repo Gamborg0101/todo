@@ -58,21 +58,23 @@
         <input type="date" name="duedate" id="duedate" />
 
         <label for="">Priority</label>
-        <div>
-          <input type="radio" name="priority" id="low" value="low" checked />
-          <label for="low">Low</label>
-        </div>
-        <div>
-          <input type="radio" name="priority" id="middle" value="middle" />
-          <label for="middle">Middle</label>
-        </div>
-        <div>
-          <input type="radio" name="priority" id="high" value="high" />
-          <label for="high">High</label>
-        </div>
-        <div id="form-button-container">
-          <button type="submit">Submit</button>
-          <button type="button" id="todo-cancel">Cancel</button>
+        <div id="priorityDiv">
+          <div>
+            <input type="radio" name="priority" id="low" value="low" checked />
+            <label for="low">Low</label>
+          </div>
+          <div>
+            <input type="radio" name="priority" id="middle" value="middle" />
+            <label for="middle">Middle</label>
+          </div>
+          <div>
+            <input type="radio" name="priority" id="high" value="high" />
+            <label for="high">High</label>
+          </div>
+          <div id="form-button-container">
+            <button type="submit" id="todo-submit">Submit</button>
+            <button type="button" id="todo-cancel">Cancel</button>
+          </div>
         </div>
       </form>
     </div>

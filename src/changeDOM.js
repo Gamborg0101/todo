@@ -42,6 +42,14 @@ export class Project {
     this.resetInputFields();
   }
 
+  renderTodoElement() {
+    /* */
+  }
+
+  setTodoElement() {
+    this.renderTodoElement();
+  }
+
   setTitleAndDescription() {
     this.renderProjectElement();
   }

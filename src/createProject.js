@@ -29,9 +29,6 @@ export function handleProjectFormSubmit() {
     });
   });
 }
-export function handleTodoForm() {
-  /* Target new form, that gets user input. */
-}
 
 export function toDoButtonModal() {
   const todoButton = document.getElementById("todo-button");
@@ -52,9 +49,21 @@ export function toDoButtonModal() {
 
   todoCancelButton.addEventListener("click", () => {
     if (sectionContainer.classList == "blurred") {
-      console.log("It's blurred");
       todoModal.style.display = "none";
       sectionContainer.classList.remove("blurred");
     }
+  });
+}
+
+export function handleTodoForm() {
+  const todoContainer = document.getElementById("todo-container");
+  const submitButton = document.getElementById("todo-submit");
+
+  submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const titleInput = document.getElementById("title");
+    const dueDateInput = document.getElementById("duedate");
+    const priority = document.querySelector('input[name="priority"]:checked');
+    console.log(titleInput.value, dueDateInput.value, priority.value);
   });
 }
