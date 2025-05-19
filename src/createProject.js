@@ -1,5 +1,6 @@
-import { Project as Project } from "./changeDOM";
+import { Project } from "./changeDOM";
 import { compareAsc, format } from "date-fns";
+import { Todo } from "./createTask";
 
 export function changeDOM() {
   /* Toggle and hide modal */
@@ -38,7 +39,7 @@ export function toDoButtonModal() {
   const todoCancelButton = document.getElementById("todo-cancel");
 
   todoButton.addEventListener("click", () => {
-    if (todoModal.style.display === "block") {
+    if (todoModal.style.display == "block") {
       todoModal.style.display = "none";
       sectionContainer.classList.remove("blurred");
     } else {
@@ -88,6 +89,16 @@ export function handleTodoForm() {
     deleteButton.innerHTML = "Delete";
 
     todoContainer.classList.add("todo-single-container");
+
+    const todoTask = new Todo(
+      titleInput.value,
+      dueDateInput.value,
+      priority.value,
+      false
+    );
+    const project = new Project();
+    project.addTodo(todoTask);
+    console.log(project);
 
     todoContainer.appendChild(titleElement);
     todoContainer.appendChild(dueDateElement);
