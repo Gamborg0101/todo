@@ -55,7 +55,6 @@ export function toDoButtonModal() {
     }
   });
 }
-console.log(format(new Date(), "yyyy-LL-d"));
 
 export function handleTodoForm() {
   const todoHTMLContainer = document.getElementById("todo-container");
@@ -71,6 +70,8 @@ export function handleTodoForm() {
     const titleElement = document.createElement("p");
     const dueDateElement = document.createElement("p");
     const priorityElement = document.createElement("p");
+    const completedButton = document.createElement("button");
+    const deleteButton = document.createElement("button");
 
     if (dueDateInput.value === "") {
       dueDateInput.value = format(new Date(), "yyyy-MM-dd");
@@ -83,12 +84,16 @@ export function handleTodoForm() {
     titleElement.innerHTML = `Title: ${titleInput.value}`;
     dueDateElement.innerHTML = `Duedate: ${dueDateInput.value}`;
     priorityElement.innerHTML = `Priority: ${priority.value}`;
+    completedButton.innerHTML = "Completed";
+    deleteButton.innerHTML = "Delete";
 
     todoContainer.classList.add("todo-single-container");
 
     todoContainer.appendChild(titleElement);
     todoContainer.appendChild(dueDateElement);
     todoContainer.appendChild(priorityElement);
+    todoContainer.appendChild(completedButton);
+    todoContainer.appendChild(deleteButton);
 
     todoHTMLContainer.appendChild(todoContainer);
 
