@@ -1,4 +1,5 @@
 import { Project as Project } from "./changeDOM";
+import { compareAsc, format } from "date-fns";
 
 export function changeDOM() {
   /* Toggle and hide modal */
@@ -54,9 +55,10 @@ export function toDoButtonModal() {
     }
   });
 }
+console.log(format(new Date(), "yyyy-LL-d"));
 
 export function handleTodoForm() {
-  const todoContainer = document.getElementById("todo-container");
+  const todoHTMLContainer = document.getElementById("todo-container");
   const submitButton = document.getElementById("todo-submit");
 
   submitButton.addEventListener("click", (e) => {
@@ -64,6 +66,32 @@ export function handleTodoForm() {
     const titleInput = document.getElementById("title");
     const dueDateInput = document.getElementById("duedate");
     const priority = document.querySelector('input[name="priority"]:checked');
-    console.log(titleInput.value, dueDateInput.value, priority.value);
+
+    const todoContainer = document.createElement("div");
+    const titleElement = document.createElement("p");
+    const dueDateElement = document.createElement("p");
+    const priorityElement = document.createElement("p");
+
+    if (dueDateInput.value === "") {
+      dueDateInput.value = format(new Date(), "yyyy-MM-dd");
+    }
+
+    if (titleInput.value === "") {
+      titleInput.value = "No title given";
+    }
+
+    titleElement.innerHTML = `Title: ${titleInput.value}`;
+    dueDateElement.innerHTML = `Duedate: ${dueDateInput.value}`;
+    priorityElement.innerHTML = `Priority: ${priority.value}`;
+
+    todoContainer.classList.add("todo-single-container");
+
+    todoContainer.appendChild(titleElement);
+    todoContainer.appendChild(dueDateElement);
+    todoContainer.appendChild(priorityElement);
+
+    todoHTMLContainer.appendChild(todoContainer);
+
+    console.log(todoContainer);
   });
 }
