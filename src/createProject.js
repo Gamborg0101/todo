@@ -35,23 +35,26 @@ export function handleTodoForm() {
 
 export function toDoButtonModal() {
   const todoButton = document.getElementById("todo-button");
-  const todoModal = document.getElementById("todo-modal-container");
-
-  const leftSide = document.getElementById("left-section");
-  const rightSide = document.getElementById("right-section");
+  const todoModal = document.getElementById("todo-form-border");
+  const sectionContainer = document.getElementById("section-container");
+  const todoCancelButton = document.getElementById("todo-cancel");
 
   todoButton.addEventListener("click", () => {
     if (todoModal.style.display === "block") {
       todoModal.style.display = "none";
-      leftSide.style.opacity = 1;
-      rightSide.style.opacity = 1;
-      todoModal.style.opacity = 0.4;
+      sectionContainer.classList.remove("blurred");
     } else {
-      leftSide.style.opacity = 0.4;
-      rightSide.style.opacity = 0.4;
-      todoModal.style.opacity = 1;
       todoModal.style.display = "block";
-      /* Set blurry background here */
+      todoButton.classList.remove("blurred");
+      sectionContainer.classList.add("blurred");
+    }
+  });
+
+  todoCancelButton.addEventListener("click", () => {
+    if (sectionContainer.classList == "blurred") {
+      console.log("It's blurred");
+      todoModal.style.display = "none";
+      sectionContainer.classList.remove("blurred");
     }
   });
 }

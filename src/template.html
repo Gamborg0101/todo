@@ -45,45 +45,36 @@
             </form>
           </div>
         </div>
-        <div id="todo-modal-container">
-          <div id="todo-form-border">
-            <form action="" id="todo-form">
-              <label for="title">Title</label>
-              <input type="text" name="title" id="title" />
-
-              <label for="duedate">Duedate</label>
-              <input type="date" name="duedate" id="duedate" />
-
-              <label for="">Priority</label>
-              <div>
-                <input
-                  type="radio"
-                  name="priority"
-                  id="low"
-                  value="low"
-                  checked
-                />
-                <label for="low">Low</label>
-              </div>
-              <div>
-                <input
-                  type="radio"
-                  name="priority"
-                  id="middle"
-                  value="middle"
-                />
-                <label for="middle">Middle</label>
-              </div>
-              <div>
-                <input type="radio" name="priority" id="high" value="high" />
-                <label for="high">High</label>
-              </div>
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-        </div>
         <button id="todo-button">Create new todo</button>
       </div>
+    </div>
+
+    <div id="todo-form-border">
+      <form action="" id="todo-form">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" />
+
+        <label for="duedate">Duedate</label>
+        <input type="date" name="duedate" id="duedate" />
+
+        <label for="">Priority</label>
+        <div>
+          <input type="radio" name="priority" id="low" value="low" checked />
+          <label for="low">Low</label>
+        </div>
+        <div>
+          <input type="radio" name="priority" id="middle" value="middle" />
+          <label for="middle">Middle</label>
+        </div>
+        <div>
+          <input type="radio" name="priority" id="high" value="high" />
+          <label for="high">High</label>
+        </div>
+        <div id="form-button-container">
+          <button type="submit">Submit</button>
+          <button type="button" id="todo-cancel">Cancel</button>
+        </div>
+      </form>
     </div>
   </body>
 </html>

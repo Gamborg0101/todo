@@ -17,7 +17,6 @@ export class Project {
 
   renderProjectElement() {
     const projectContainer = document.getElementById("project-container");
-
     const createNewContainer = document.createElement("div");
     const createTitle = document.createElement("div");
     const deleteButton = document.createElement("button");
@@ -28,10 +27,6 @@ export class Project {
     /* Functionality for delete button */
     deleteButton.addEventListener("click", () => {
       createNewContainer.remove();
-    });
-
-    createTitle.addEventListener("click", () => {
-      createNewContainer.setAttribute("data-select", "selected");
     });
 
     createTitle.innerText = `${this.title}`;
@@ -51,4 +46,3 @@ export class Project {
     this.renderProjectElement();
   }
 }
-

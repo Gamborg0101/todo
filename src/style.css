@@ -18,14 +18,19 @@ svg {
 }
 
 :root {
-  --background-color: #ece7e7;
-  --light-background-color: #f3e9d2;
-  --light-background-color-accent: #e5dbc2;
-  --accent1: #1a936f;
-  --accent2: #88d498;
-  --accent3: #c6dabf;
-  --text-color: #000000;
-  --text-color-accent: #5c585890;
+  --background-color: rgba(236, 231, 231, 0.8);
+  --light-background-color: rgba(243, 233, 210, 0.8);
+  --light-background-color-accent: rgba(229, 219, 194, 0.8);
+  --accent1: rgba(26, 147, 111, 0.8);
+  --accent2: rgba(136, 212, 152, 0.8);
+  --accent3: rgba(198, 218, 191, 0.8);
+  --text-color: rgba(0, 0, 0, 0.8);
+  --text-color-accent: rgba(
+    92,
+    88,
+    88,
+    0.56
+  ); /* already had alpha, preserved it */
 }
 
 /*Left section*/
@@ -33,6 +38,7 @@ svg {
 #section-container {
   display: grid;
   grid-template-columns: 200px 1fr;
+
   height: 100%;
 }
 
@@ -41,6 +47,11 @@ svg {
   grid-column: 1/2;
   padding: 10px;
 }
+
+#right-section {
+  grid-column: 2/3;
+}
+
 #app-name {
   font-size: 1.8rem;
   font-weight: bold;
@@ -130,12 +141,6 @@ svg {
   color: var(--text-color-accent);
 }
 
-#sun-icon {
-  grid-area: sun;
-  display: block;
-  margin: auto;
-}
-
 /*Right section*/
 
 #test-header {
@@ -143,21 +148,6 @@ svg {
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-}
-
-#todo-modal-container {
-  display: none;
-}
-
-#todo-form-border {
-  padding: 15px;
-  background-color: #5c585890;
-  width: 300px;
-}
-
-#todo-form {
-  display: flex;
-  flex-direction: column;
 }
 
 /*Modal*/
@@ -168,11 +158,6 @@ svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-#todo-modal-container:active {
-  background: #000;
-  opacity: 0.4;
 }
 
 #modal-border {
@@ -192,6 +177,38 @@ svg {
   align-items: center;
   flex-direction: column;
   gap: 15px;
+}
+
+/* Todo-modal */
+
+.blurred {
+  filter: blur(5px);
+  pointer-events: none; /* Optional: disables clicks */
+  transition: filter 0.3s ease;
+}
+
+#todo-form-border {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  padding: 15px;
+  background-color: #5c585890;
+}
+#form-button-container {
+  display: flex;
+}
+
+#todo-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#todo-button {
+  width: 100px;
+  height: 50px;
 }
 
 /* Dynamic containers */
@@ -227,5 +244,3 @@ svg {
   font-size: 1.2rem;
   font-weight: bold;
 }
-
-
