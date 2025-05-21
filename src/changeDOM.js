@@ -5,6 +5,10 @@ export class Project {
     this.todos = [];
   }
 
+  getTodo() {
+    return this.todos;
+  }
+
   addTodo(todo) {
     this.todos.push(todo);
   }
@@ -29,9 +33,13 @@ export class Project {
       createNewContainer.remove();
     });
 
+    createNewContainer.addEventListener("click", () => {
+      const projectTitle = createNewContainer.childNodes[0].innerText;
+      this.createProjectRender(projectTitle);
+    });
+
     createTitle.innerText = `${this.title}`;
     createTitle.className = "titleElement";
-
     createNewContainer.classList.add("single-project");
 
     createNewContainer.appendChild(createTitle);
@@ -42,8 +50,10 @@ export class Project {
     this.resetInputFields();
   }
 
-  renderTodoElement() {
-    /* */
+  createProjectRender(title) {
+    console.log("createProjectRender: " + title);
+
+    /* FROM HERE: i need to render the project with the title. */
   }
 
   setTodoElement() {

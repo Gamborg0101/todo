@@ -1,6 +1,8 @@
 import { Project } from "./changeDOM";
-import { compareAsc, format } from "date-fns";
+import { format } from "date-fns";
 import { Todo } from "./createTask";
+
+let projectArray = [];
 
 export function changeDOM() {
   /* Toggle and hide modal */
@@ -22,11 +24,12 @@ export function handleProjectFormSubmit() {
     const form = document.getElementById("project-form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-
       const title = document.getElementById("title-input").value;
-
       const project = new Project(title);
+      // createProjectRender(project);
+      projectArray.push(project);
       console.log("Project from init", project);
+
       project.renderProjectElement();
     });
   });
